@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Business Requirements - Russia & India</title>
+    <style>
+        :root {
+            /* Russia theme colors */
+            --russia-primary: #1a5f7a;
+            --russia-secondary: #2d8bac;
+            --russia-accent: #3ca6c4;
+            --russia-gradient: linear-gradient(135deg, #1a5f7a 0%, #2d8bac 100%);
+
+            /* India theme colors */
+            --india-primary: #c17917;
+            --india-secondary: #e68a00;
+            --india-accent: #ffa726;
+            --india-gradient: linear-gradient(135deg, #c17917 0%, #e68a00 100%);
+
+            /* Common colors */
+            --text-primary: #1f2937;
+            --text-secondary: #4b5563;
+            --bg-primary: #f8fafc;
+            --bg-secondary: #ffffff;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: linear-gradient(135deg, #f6f7f9 0%, #e9ecef 100%);
+            min-height: 100vh;
+        }
+
+        .header {
+            background: var(--bg-secondary);
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(120deg, #ffffff 0%, #f8f9fa 100%);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg,
+                rgba(26, 95, 122, 0.1) 0%,
+                rgba(193, 121, 23, 0.1) 50%,
+                rgba(26, 95, 122, 0.1) 100%
+            );
+            animation: rotate 20s linear infinite;
+            z-index: 1;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .header h1 {
+            margin: 0;
+            background: linear-gradient(90deg, var(--russia-primary), var(--india-primary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-size: 3rem;
+            position: relative;
+            z-index: 2;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            position: relative;
+        }
+
+        .country-section {
+            background: var(--bg-secondary);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .russia-section {
+            border-top: 5px solid var(--russia-primary);
+        }
+
+        .india-section {
+            border-top: 5px solid var(--india-primary);
+        }
+
+        .country-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #e5e7eb;
+            position: relative;
+        }
+
+        .russia-section .country-name {
+            color: var(--russia-primary);
+        }
+
+        .india-section .country-name {
+            color: var(--india-primary);
+        }
+
+        .country-name {
+            font-size: 2.2rem;
+            margin: 0;
+            position: relative;
+            padding-left: 1rem;
+        }
+
+        .russia-section .country-name::before {
+            background: var(--russia-gradient);
+        }
+
+        .india-section .country-name::before {
+            background: var(--india-gradient);
+        }
+
+        .country-name::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 70%;
+            border-radius: 2px;
+        }
+
+        .requirements-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .requirement-item {
+            background: var(--bg-primary);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: var(--transition);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .russia-section .requirement-item::before {
+            background: var(--russia-gradient);
+        }
+
+        .india-section .requirement-item::before {
+            background: var(--india-gradient);
+        }
+
+        .requirement-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .requirement-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .requirement-item:hover::before {
+            opacity: 1;
+        }
+
+        .russia-section .requirement-title {
+            color: var(--russia-primary);
+        }
+
+        .india-section .requirement-title {
+            color: var(--india-primary);
+        }
+
+        .requirement-title {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .requirement-content {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .russia-section .link {
+            color: var(--russia-primary);
+            background: rgba(26, 95, 122, 0.1);
+        }
+
+        .india-section .link {
+            color: var(--india-primary);
+            background: rgba(193, 121, 23, 0.1);
+        }
+
+        .link {
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            margin-top: 1rem;
+            font-weight: 500;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: var(--transition);
+        }
+
+        .russia-section .link:hover {
+            background: rgba(26, 95, 122, 0.2);
+        }
+
+        .india-section .link:hover {
+            background: rgba(193, 121, 23, 0.2);
+        }
+
+        .link:hover {
+            transform: translateX(5px);
+        }
+
+        .russia-section .incubation-centers {
+            background: linear-gradient(135deg, rgba(26, 95, 122, 0.1) 0%, rgba(26, 95, 122, 0.05) 100%);
+        }
+
+        .india-section .incubation-centers {
+            background: linear-gradient(135deg, rgba(193, 121, 23, 0.1) 0%, rgba(193, 121, 23, 0.05) 100%);
+        }
+
+        .incubation-centers {
+            padding: 2rem;
+            border-radius: 12px;
+            margin-top: 3rem;
+            position: relative;
+        }
+
+        .russia-section .incubation-title {
+            color: var(--russia-primary);
+            border-bottom: 2px solid rgba(26, 95, 122, 0.2);
+        }
+
+        .india-section .incubation-title {
+            color: var(--india-primary);
+            border-bottom: 2px solid rgba(193, 121, 23, 0.2);
+        }
+
+        .incubation-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+        }
+
+        .center-item {
+            background: var(--bg-secondary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            transition: var(--transition);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .russia-section .center-item strong {
+            color: var(--russia-primary);
+        }
+
+        .india-section .center-item strong {
+            color: var(--india-primary);
+        }
+
+        .center-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .center-item strong {
+            font-size: 1.1rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .center-item p {
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .country-section {
+                padding: 1.5rem;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .requirements-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-primary);
+        }
+
+        .russia-section ::-webkit-scrollbar-thumb {
+            background: var(--russia-secondary);
+        }
+
+        .india-section ::-webkit-scrollbar-thumb {
+            background: var(--india-secondary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-color);
+        }
+
+        ::selection {
+            background: var(--russia-primary);
+            color: white;
+        }
+
+        .russia-section {
+            animation: fadeInLeft 0.8s ease-out;
+        }
+
+        .india-section {
+            animation: fadeInRight 0.8s ease-out;
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Basic Institutions and Elements for Business</h1>
+    </div>
+    
+    <div class="container">
+        <!-- Russia Section -->
+        <section class="country-section russia-section">
+            <div class="country-header">
+                <h2 class="country-name">RUSSIA</h2>
+            </div>
+            
+            <ul class="requirements-list">
+                <li class="requirement-item">
+                    <div class="requirement-title">1. Taxpayer Identification Number (INN)</div>
+                    <div class="requirement-content">
+                        Mandatory for all businesses to conduct tax-related activities in Russia. The Federal Tax Service issues it during the business registration process.
+                        <a href="#" class="link">Federal Tax Service</a>
+                    </div>
+                </li>
+                
+                <li class="requirement-item">
+                    <div class="requirement-title">2. Certificate of State Registration (OGRN)</div>
+                    <div class="requirement-content">
+                        Issued by the Federal Tax Service, confirms the state registration of a business entity. Required during business incorporation with identification information of founders and directors.
+                        <a href="#" class="link">Federal Tax Service</a>
+                    </div>
+                </li>
+
+                <li class="requirement-item">
+                    <div class="requirement-title">3. Charter Documents</div>
+                    <div class="requirement-content">
+                        Define the company's internal governance, structure, and scope of operations. Equivalent to foundational agreements or bylaws.
+                        <a href="#" class="link">Federal Tax Service</a>
+                    </div>
+                </li>
+
+                <li class="requirement-item">
+                    <div class="requirement-title">4. Legal Address Proof</div>
+                    <div class="requirement-content">
+                        Federal Notarial Chamber offers a notary search tool to find legal professionals performing verification of documents and identities.
+                        <a href="#" class="link">Federal Notarial Chamber</a>
+                    </div>
+                </li>
+
+                <li class="requirement-item">
+                    <div class="requirement-title">5. Corporate Bank Account Statement</div>
+                    <div class="requirement-content">
+                        Businesses must open a corporate bank account in Russia for financial transactions. Required documents include proof of registration, INN, and charter documents.
+                        <a href="#" class="link">Sberbank Russia</a>
+                    </div>
+                </li>
+
+                <li class="requirement-item">
+                    <div class="requirement-title">6. Certificate of Tax Registration</div>
+                    <div class="requirement-content">
+                        Following registration, businesses must register separately for tax payments to receive tax certificates and ensure compliance with local and federal tax laws.
+                        <a href="#" class="link">Federal Tax Service</a>
+                    </div>
+                </li>
+
+                <li class="requirement-item">
+                    <div class="requirement-title">7. Company Seal</div>
+                    <div class="requirement-content">
+                        A legal seal is required to authoritatively sign certain business documents. This is procured after receiving the state registration certificate.
+                    </div>
+                </li>
+
+                <li class="requirement-item">
+                    <div class="requirement-title">8. Licenses and Permits</div>
+                    <div class="requirement-content">
+                        Specific industries require additional licenses from respective government bodies. Details available through Russia's Ministry of Economic Development.
+                        <a href="#" class="link">Ministry of Economic Development</a>
+                    </div>
+                </li>
+
+                <li class="requirement-item">
+                    <div class="requirement-title">9. Public Services Portal (Gosuslugi)</div>
+                    <div class="requirement-content">
+                        Provides access to various government services, including guidance on director verification.
+                        <a href="#" class="link">Gosuslugi</a>
+                    </div>
+                </li>
+
+                <li class="requirement-item">
+                    <div class="requirement-title">10. Russian Post (Pochta Rossii)</div>
+                    <div class="requirement-content">
+                        Serves as authorized points for document submission or identity verification under certain business setups.
+                        <a href="#" class="link">Russian Post</a>
+                    </div>
+                </li>
+
+                <li class="requirement-item">
+                    <div class="requirement-title">11. Social Security and Pension Fund Registration</div>
+                    <div class="requirement-content">
+                        Employers need to register with social security and pension authorities to make mandatory contributions.
+                        <a href="#" class="link">Pension Fund of Russia</a>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="incubation-centers">
+                <h3 class="incubation-title">Public/Government-Supported Incubation Centers</h3>
+                <div class="center-item">
+                    <strong>Skolkovo Innovation Center</strong>
+                    <p>Supported by the Russian government, fostering innovation through incubation programs for startups across sectors such as IT, energy, and biotechnology. Offers R&D support, mentorship, and infrastructure.</p>
+                </div>
+                <div class="center-item">
+                    <strong>Bortnik Foundation (FASIE)</strong>
+                    <p>State-funded foundation providing startup grants and technical assistance for innovative businesses in Russia. Supports technology commercialization.</p>
+                </div>
+                <div class="center-item">
+                    <strong>Ingria Business Incubator</strong>
+                    <p>Partially public-supported incubation center in St. Petersburg helping startups with resources like mentorship, investment access, and business infrastructure.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- India Section -->
+        <section class="country-section india-section">
+            <div class="country-header">
+                <h2 class="country-name">INDIA</h2>
+            </div>
+            
+            <ul class="requirements-list">
+                <li class="requirement-item">
+                    <div class="requirement-title">1. Permanent Account Number (PAN)</div>
+                    <div class="requirement-content">
+                        A unique identifier issued by the Income Tax Department essential for opening a bank account, filing tax returns, and other financial activities.
+                        <a href="#" class="link">NSDL e-Gov</a>
+                    </div>
+                </li>
+
+                <li class="requirement-item">
+                    <div class="requirement-title">2. GST Registration</div>
+                    <div class="requirement-content">
+                        Mandatory for businesses with annual turnovers exceeding ₹20 Lakhs, required to collect and remit GST.
+                        <a href="#" class="link">GST Portal</a>
+                    </div>
+                </li>
+
+                <li class="requirement-item">
+                    <div class="requirement-title">3. Certificate of Incorporation</div>
+                    <div class="requirement-content">
+                        Issued by the Registrar of Companies (RoC), legally recognizes a business as a corporate entity. Apply through SPICe form.
+                        <a href="#" class="link">Ministry of Corporate Affairs</a>
+                    </div>
+                </li>
+
+                <li class="requirement-item">
+                    <div class="requirement-title">4. MoA and AoA</div>
+                    <div class="requirement-content">
+                        Memorandum of Association and Articles of Association define the company's purpose, duties, internal rules, and operations.
+                        <a href="#" class="link">Ministry of Corporate Affairs</a>
+                    </div>
+                </li>
+
+                <li class="requirement-item">
+                    <div class="requirement-title">5. Director Identification Number (DIN)</div>
+                    <div class="requirement-content">
+                        Mandatory for anyone intending to become a director in a company in India.
+                        <a href="#" class="link">Ministry of Corporate Affairs - DIN Application</a>
+                    </div>
+                </li>
+
+                <li class="requirement-item">
+                    <div class="requirement-title">6. Digital Signature Certificate (DSC)</div>
+                    <div class="requirement-content">
+                        Required for filing electronic forms with government departments such as MCA.
+                        <a href="#" class="link">MCA Digital Certificate Providers</a>
+                    </div>
+                </li>
+
+                <li class="requirement-item">
+                    <div class="requirement-title">7. Shops and Establishment Registration</div>
+                    <div class="requirement-content">
+                        Mandatory for businesses operating in commercial spaces. Registration is done with the local municipal corporation.
+                    </div>
+                </li>
+
+                <li class="requirement-item">
+                    <div class="requirement-title">8. Professional Tax Registration</div>
+                    <div class="requirement-content">
+                        Applicable to businesses employing staff, mandated by most state governments.
+                        <a href="#" class="link">Maharashtra Professional Tax</a>
+                    </div>
+                </li>
+
+                <li class="requirement-item">
+                    <div class="requirement-title">9. Trade License</div>
+                    <div class="requirement-content">
+                        Required from the municipal corporation to operate legally.
+                        <a href="#" class="link">Online Services of MCD</a>
+                    </div>
+                </li>
+
+                <li class="requirement-item">
+                    <div class="requirement-title">10. FSSAI License</div>
+                    <div class="requirement-content">
+                        Mandatory for businesses engaged in food-related operations.
+                        <a href="#" class="link">FSSAI Portal</a>
+                    </div>
+                </li>
+
+                <li class="requirement-item">
+                    <div class="requirement-title">11. Import Export Code (IEC)</div>
+                    <div class="requirement-content">
+                        Mandatory for businesses involved in import or export.
+                        <a href="#" class="link">DGFT IEC Application</a>
+                    </div>
+                </li>
+
+                <li class="requirement-item">
+                    <div class="requirement-title">12. Udyam Registration</div>
+                    <div class="requirement-content">
+                        For Micro, Small, and Medium Enterprises (MSMEs) to avail benefits under government schemes.
+                        <a href="#" class="link">Udyam Registration</a>
+                    </div>
+                </li>
+
+                <li class="requirement-item">
+                    <div class="requirement-title">13. Employee State Insurance (ESI) Registration</div>
+                    <div class="requirement-content">
+                        Mandatory for businesses hiring more than 10 employees.
+                        <a href="#" class="link">ESIC Portal</a>
+                    </div>
+                </li>
+
+                <li class="requirement-item">
+                    <div class="requirement-title">14. Provident Fund (PF) Registration</div>
+                    <div class="requirement-content">
+                        Required for organizations with 20 or more employees to ensure financial security for workers.
+                        <a href="#" class="link">Employees' Provident Fund Organisation</a>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="incubation-centers">
+                <h3 class="incubation-title">Public/Government-Supported Incubation Centers</h3>
+                <div class="center-item">
+                    <strong>Startup India</strong>
+                    <p>Acts as an umbrella, policy framework, and enabler for government-supported incubation centers.</p>
+                </div>
+                <div class="center-item">
+                    <strong>Atal Incubation Centres (AICs)</strong>
+                    <p>Initiated under the Atal Innovation Mission by NITI Aayog, promoting innovation and entrepreneurship throughout India.</p>
+                </div>
+                <div class="center-item">
+                    <strong>Mission Startup Karnataka</strong>
+                    <p>Based in Bangalore, the Silicon Valley of India, supporting startup growth and innovation through various government initiatives.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
