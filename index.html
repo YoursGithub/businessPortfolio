@@ -131,9 +131,25 @@
         justify-content: center; 
         align-items: center;
         margin-top: 100px;
+        margin-left: 0px;
     }
 }
 
+    @media screen and (max-width : 768px) {
+        .dashboard-link a {
+            position: absolute;
+            background-color: white;
+            color: blue;
+            padding: 15px 25px;
+            margin-left: 0px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+    }
         .main-btn {
             display: inline-block;
             background-color: #007bff;
@@ -162,13 +178,25 @@
     }
 }
 
+@media (max-width: 768px) {
+    div[style*="display: flex"] {
+      flex-direction: column !important;
+      align-items: center !important;
+      text-align: center;
+    }
+    
+    .dashboard-link {
+      margin-top: 40px !important;
+    }
+}
+
 /* Optional: For larger desktop screens */
 @media screen and (min-width: 1024px) {
     .lottiefile dotlottie-player {
         /* You can adjust sizes for larger screens if needed */
         width: 450px;
         height: 450px;
-        margin-top: 80px;
+        margin-top: 120px;
     }
 }
 
@@ -301,26 +329,28 @@
                         <!-- <span class="title-tag" >
                             Company Name
                         </span> -->
-                        <h1 class="title" style="color: white;">
-                            Where Clients and Service Providers Connect with Confidence.
-                        </h1>
-                        <!-- <p style="color: white;">
-                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremda tium totam rem aperiam eaque ipsa quae ab illo inventore veritatis
-                        </p> -->
-                        <div class="dashboard-link" style="margin-top: 60px;">
-                            <a href="https://business-dashboard-topaz.vercel.app/" target="_blank">
+                        <div style="display: flex;">
+                            <h1 class="title" style="color: white; margin-top: 50px;">
+                              Russia-India Bridge - MOCT
+                            </h1>
+                            
+                            <div class="dashboard-link" style="display: flex; margin-top: 60px;">
+                              <a href="https://business-dashboard-topaz.vercel.app/" 
+                                 target="_blank" 
+                                 class="dash" 
+                                 style="display: flex; white-space: nowrap; ">
                                 Go to Dashboard
-                            </a>
-                        </div>
+                              </a>
+                            </div>
+                          </div>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="lottiefile">
-            <dotlottie-player src="https://lottie.host/fac2b528-b6fd-42a9-bc1a-9466258cf642/XVDUxdRtDj.lottie" background="transparent" speed="1" style="width: 450px; height: 450px; margin-top: 80px;" loop autoplay></dotlottie-player>
+            <dotlottie-player src="https://lottie.host/fd7527c5-82c7-487b-9b3d-6d1bd87265e2/VjgexglgJh.lottie" background="transparent" speed="1" style="width: 450px; height: 450px; margin-left: 150px; margin-top: 80px;" loop autoplay></dotlottie-player>
         </div>
-    </div>
 </section>
                
         <!--====== BANNER PART ENDS ======-->
@@ -329,21 +359,65 @@
 
         <section class="about-section section-gap about-with-shape">
         <div class="container">
-            <div class="about-text-block">
-                <div class="row justify-content-between align-items-center">
-                    <div class="col-lg-5">
-                        <div class="section-title mb-md-gap-30 wow fadeInLeft" data-wow-delay="0.3s">
-                            <span class="title-tag">ABOUT US</span>
-                            <h2 class="title">Russia-India Bridge - MOCT</h2>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.3s">
-                        <p>Bridging Businesses, Empowering Partnerships
-                            We are a decentralized, volunteer-driven platform fostering seamless collaboration between businesses in Russia and India. Our mission is to enable private and public enterprises across all sectors to connect, explore opportunities, and expand into vibrant markets, unlocking their full potential.
-                        </p>
-                    </div>
+            <!DOCTYPE html>
+<html>
+<body>
+    <div style="background-image: url('/assets/front/images/russia.jpeg'); 
+                background-size: cover; 
+                background-position: center; 
+                background-repeat: no-repeat; 
+                padding: 5vh 0; 
+                position: relative; 
+                color: white; 
+                width: 100%; 
+                min-height: 50vh;">
+        <!-- Overlay for better text readability -->
+        <div style="position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: rgba(0, 0, 0, 0.6);"></div>
+        
+        <!-- Content container -->
+        <div style="max-width: 90%;
+                    margin: 0 auto;
+                    padding: 0 20px;
+                    position: relative;
+                    z-index: 2;
+                    margin-top: 40px;
+                    text-align: center;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: 2rem;">
+            
+            <!-- Left column -->
+            <div style="flex: 1 1 300px;">
+                <div style="margin-bottom: clamp(20px, 3vh, 40px);">
+                    <span style="display: inline-block;
+                               font-size: clamp(14px, 1.5vw, 16px);
+                               font-weight: 700;
+                               text-transform: uppercase;
+                               padding: 8px 20px;
+                               background: #007bff;
+                               color: white;
+                               border-radius: 5px;">ABOUT US</span>
                 </div>
             </div>
+            
+            <!-- Right column -->
+            <div style="flex: 1 1 400px;">
+                <p style="font-size: clamp(16px, 1.8vw, 18px);
+                          line-height: 1.6;
+                          margin: 0;">
+                    Bridging Businesses, Empowering Partnerships
+                    We are a decentralized, volunteer-driven platform fostering seamless collaboration between businesses in Russia and India. Our mission is to enable private and public enterprises across all sectors to connect, explore opportunities, and expand into vibrant markets, unlocking their full potential.
+                </p>
+            </div>
+        </div>
+    </div>
+
             <!-- Service Start -->
             <div class="service-items pt-50">
                 <div style="text-align: center; margin-top: 60px;">
@@ -357,7 +431,7 @@
                                 <i class="fal fa-laptop-code"></i>
                             </div>
                             <h5 class="title">Partner Connect</h5>
-                            <p>Match with potential collaborators, investors, and service providers.</p>
+                            <p>Find collaborators, investors, and service providers for Russia-India trade.</p>
                         </div>
                     </div>
                                         <div class="col-lg-3 col-md-6 col-sm-6 wow fadeInLeft" data-wow-delay="0.3s">
@@ -366,7 +440,7 @@
                                 <i class="fal fa-fingerprint"></i>
                             </div>
                             <h5 class="title">Market Insights</h5>
-                            <p>Access expert-driven resources, industry reports, and trade updates.</p>
+                            <p>Access industry reports, market resources, and the latest trade updates.</p>
                         </div>
                     </div>
                                         <div class="col-lg-3 col-md-6 col-sm-6 wow fadeInLeft" data-wow-delay="0.3s">
@@ -375,7 +449,7 @@
                                 <i class="fal fa-chalkboard"></i>
                             </div>
                             <h5 class="title">Opportunities Hub</h5>
-                            <p>Explore business opportunities, projects, and tenders in diverse sectors.</p>
+                            <p>Explore business opportunities, tenders, and projects across sectors.</p>
                         </div>
                     </div>
                                         <div class="col-lg-3 col-md-6 col-sm-6 wow fadeInLeft" data-wow-delay="0.3s">
@@ -384,7 +458,7 @@
                                 <i class="fal fa-database"></i>
                             </div>
                             <h5 class="title">Support Ecosystem</h5>
-                            <p>Get guidance on regulations, market entry, and funding options.</p>
+                            <p>Get expert guidance on regulations, market entry strategies, and funding options.</p>
                         </div>
                     </div>
                                     </div>
@@ -595,9 +669,6 @@
             </div>
         </section>
 
-
-
-
         <section style="min-height: 100vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(45deg, rgba(0,0,0,0.9), rgba(0,0,0,0.7)), url('/api/placeholder/1920/1080'); background-size: cover; background-position: center; background-attachment: fixed;">
             <div style="max-width: 1200px; padding: 40px 20px; text-align: center; color: white;">
                 <div style="display: inline-block; padding: 10px 20px; background: rgba(255,255,255,0.1); border-radius: 30px; margin-bottom: 20px;">
@@ -609,7 +680,7 @@
                 </h1>
                 
                 <p style="font-size: 20px; line-height: 1.8; margin: 30px 0; color: rgba(255,255,255,0.9); max-width: 800px; margin-left: auto; margin-right: auto;">
-                    Sign up now to discover new opportunities, expand your reach, and collaborate with trusted partners. Together, let's build stronger business ties between India and Russia.
+                    Sign up now to unlock new opportunities, expand your network, and collaborate with trusted partners. Together, let's strengthen business ties and drive growth between India and Russia in a mutually beneficial way.
                 </p>
                 
                 <div style="margin-top: 50px; display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
@@ -809,8 +880,8 @@
         <section class="testimonials-section section-gap soft-blue-bg">
         <div class="container">
             <div class="section-title text-center mb-60">
-                <span class="title-tag">TESTIMONIAL</span>
-                <h2 class="title">What Our Client Says</h2>
+                <!-- <span class="title-tag">TESTIMONIAL</span> -->
+                <h2 class="title">VOICES OF COLLABORATION</h2>
             </div>
 
             <div class="testimonials-slider row">
@@ -824,15 +895,15 @@
                                                             <i class="fas fa-star"></i>
                                                             <i class="fas fa-star"></i>
                             </span>
-                            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+                            Entering the Indian market seemed complex, but this platform connected us with the right local partners, helping us scale quickly and efficiently. It made navigating a new business environment surprisingly smooth.
                         </p>
                         <div class="author d-flex align-items-center">
                             <div class="photo">
                                 <img src="assets/front/img/1622610022334317720.jpg" alt="Image">
                             </div>
                             <div class="desc">
-                                <h6> Lucky</h6>
-                                <span class="position">CEO of Apple</span>
+                                <h6>Ivan Petrov</h6>
+                                <span class="position">— Ivan Petrov, Co-founder, TechNova Solutions</span>
                             </div>
                         </div>
                     </div>
@@ -847,38 +918,39 @@
                                                             <i class="fas fa-star"></i>
                                                             <i class="fas fa-star"></i>
                             </span>
-                            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+                            Entering the Indian market seemed complex, but this platform connected us with the right local partners, helping us scale quickly and efficiently. It made navigating a new business environment surprisingly smooth.
                         </p>
                         <div class="author d-flex align-items-center">
                             <div class="photo">
                                 <img src="assets/front/img/16226099182019624356.jpg" alt="Image">
                             </div>
                             <div class="desc">
-                                <h6> Genius Lucky</h6>
-                                <span class="position">CEO of Apple</span>
+                                <h6>Anna Smirnova</h6>
+                                <span class="position">— Anna Smirnova, CEO, AgroTech Innovations</span>
                             </div>
                         </div>
                     </div>
                 </div>
-                                <div class="col-lg-4">
+                    <div class="col-lg-4">
                     <div class="testimonial-box color-1s">
                         
                         <p>
-                               <span class="d-block">                                 <i class="fas fa-star"></i>
+                               <span class="d-block">  
+                                                            <i class="fas fa-star"></i>
                                                             <i class="fas fa-star"></i>
                                                             <i class="fas fa-star"></i>
                                                             <i class="fas fa-star"></i>
                                                             <i class="fas fa-star"></i>
                             </span>
-                            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+                            This platform connected us with reliable partners and guided us to the right public bodies for incorporation and compliance, making our entry into the Russian market smooth and efficient.
                         </p>
                         <div class="author d-flex align-items-center">
                             <div class="photo">
-                                <img src="assets/front/img/1622609908696856003.jpg" alt="Image">
+                                <img src="assets/front/img/16128799941528559809.jpg" alt="Image">
                             </div>
                             <div class="desc">
-                                <h6> Lisa</h6>
-                                <span class="position">CEO of Apple</span>
+                                <h6>Rahul Sharma</h6>
+                                <span class="position">— Rahul Sharma, Founder, InnovateTech Solutions</span>
                             </div>
                         </div>
                     </div>
@@ -926,7 +998,7 @@
 
                             <div id="collapse3" class="collapse " aria-labelledby="headingOne" data-parent="#accordionExample">
                                 <div class="card-body">
-                                    <p><p><span style="color:rgb(97,97,97);font-family:Karla, sans-serif;font-size:15px;">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam</span><br></p></p>
+                                    <p><p><span style="color:rgb(97,97,97);font-family:Karla, sans-serif;font-size:15px;">Leverage the knowledge and expertise of our seasoned professionals, dedicated to guiding you through every step of your business journey. Trust in their insights to help you navigate opportunities and challenges with confidence.</span><br></p></p>
                                 </div>
                             </div>
                         </div> <!-- card -->
@@ -939,7 +1011,7 @@
 
                             <div id="collapse4" class="collapse " aria-labelledby="headingOne" data-parent="#accordionExample">
                                 <div class="card-body">
-                                    <p><p><span style="color:rgb(97,97,97);font-family:Karla, sans-serif;font-size:15px;">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam</span><br></p></p>
+                                    <p><p><span style="color:rgb(97,97,97);font-family:Karla, sans-serif;font-size:15px;">Streamline your business processes with our innovative Management Engineering System, designed to optimize efficiency, enhance decision-making, and drive sustainable growth.</span><br></p></p>
                                 </div>
                             </div>
                         </div> <!-- card -->
@@ -952,7 +1024,7 @@
 
                             <div id="collapse2" class="collapse " aria-labelledby="headingOne" data-parent="#accordionExample">
                                 <div class="card-body">
-                                    <p><p><span style="color:rgb(97,97,97);font-family:Karla, sans-serif;font-size:15px;">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam</span><br></p></p>
+                                    <p><p><span style="color:rgb(97,97,97);font-family:Karla, sans-serif;font-size:15px;">Ensure your business remains operational and secure with our reliable solutions, keeping you running smoothly and protected from potential risks.</span><br></p></p>
                                 </div>
                             </div>
                         </div> <!-- card -->
@@ -963,37 +1035,37 @@
                                                 <div class="col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
                             <div class="counter-box-three counter-active mt-50">
                                 <div class="counter-wrap">
-                                    <span class="counter">569</span> <sup>+</sup>
+                                    <span class="counter">25</span> <sup>+</sup>
                                 </div>
-                                <span class="title">Projct Complate</span>
-                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptsantium doloremque laudantium</p>
+                                <span class="title">Projects completed</span>
+                                <p>Successfully delivering impactful solutions and fostering collaborations.</p>
                             </div>
                         </div>
                                                 <div class="col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
                             <div class="counter-box-three counter-active mt-50">
                                 <div class="counter-wrap">
-                                    <span class="counter">356</span> <sup>+</sup>
+                                    <span class="counter">18</span> <sup>+</sup>
                                 </div>
-                                <span class="title">Happy Clients</span>
-                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptsantium doloremque laudantium</p>
+                                <span class="title">Satisfied Partners</span>
+                                <p>Building trust through reliable service and tailored solutions.</p>
                             </div>
                         </div>
                                                 <div class="col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
                             <div class="counter-box-three counter-active mt-50">
                                 <div class="counter-wrap">
-                                    <span class="counter">783</span> <sup>+</sup>
+                                    <span class="counter">30</span> <sup>+</sup>
                                 </div>
                                 <span class="title">Business Partners</span>
-                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptsantium doloremque laudantium</p>
+                                <p>Strengthening cross-border connections for growth and collaboration.</p>
                             </div>
                         </div>
                                                 <div class="col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
                             <div class="counter-box-three counter-active mt-50">
                                 <div class="counter-wrap">
-                                    <span class="counter">894</span> <sup>+</sup>
+                                    <span class="counter">12</span> <sup>+</sup>
                                 </div>
-                                <span class="title">IT Consultant</span>
-                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptsantium doloremque laudantiu</p>
+                                <span class="title">Legal Consultants</span>
+                                <p>Providing expert technical guidance to optimize business operations.</p>
                             </div>
                         </div>
                                             </div>
@@ -1005,7 +1077,7 @@
         <!--====== OUE CHOOSE PART ENDS ======-->
 
     <!--====== MEET US PART START ======-->
-        <section class="call-to-action-two">
+        <!-- <section class="call-to-action-two">
         <div class="container">
             <div class="call-to-action-inner" style="background-image: url(assets/front/img/16131902461486580724.jpg); margin-bottom: 50px;">
                 <div class="row justify-content-between align-items-center">
@@ -1018,7 +1090,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
         <!--====== MEET US PART ENDS ======-->
 
     <!--====== LATEST NEWS PART START ======-->
@@ -1042,12 +1114,13 @@
             <div class="row footer-widgets">
                 <div class="col-lg-3 col-md-6">
                     <div class="widget-item-1 mt-30">
+                        <h4 class="title" style="color: white; margin-top: -17px;">Disclaimer</h4>
                         <!-- <img src="assets/front/img/footer_logo16159014611986770640.png" alt=""> -->
-                        <p>The web has changed a lot since Vitaly posted his first article back in 2006. The team at Smashing has changed too, as have the things that we bring to our community onferences, books, and our membershipe.</p>
+                        <p style="text-align: center;">This decentralized platform is provided for public use to facilitate business connections. The developers and managing team disclaim all liability for any fiduciary dealings, agreements, disputes, or losses arising from user interactions. Users are solely responsible for verifying parties and conducting due diligence before entering any financial or contractual arrangements.</p>
                     </div> <!-- widget item 1 -->
                 </div>
                 
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-4 col-md-6" style="display: flex; justify-content: center;">
                     <div class="widget-item-2  mt-30">
                         <h4 class="title">Contact Us</h4>
                         <ul>
@@ -1060,18 +1133,18 @@
                     </div> <!-- widget item 3 -->
                 </div>
                 <div class="col-lg-2 col-md-6">
-                    <div class="widget-item-2 mt-30">
+                    <!-- <div class="widget-item-2 mt-30">
                         <h4 class="title">Links</h4>
                         <div class="footer-list">
                             <ul>
-                                                                <li><a href="#"><i class="fal fa-angle-right"></i>About Us</a></li> 
+                        <li><a href="#"><i class="fal fa-angle-right"></i>About Us</a></li> 
                                                                 <li><a href="#"><i class="fal fa-angle-right"></i>Our Privacy</a></li> 
                                                                 <li><a href="#"><i class="fal fa-angle-right"></i>Services</a></li> 
                                                                 <li><a href="#"><i class="fal fa-angle-right"></i>Policy</a></li> 
                                                                 <li><a href="#"><i class="fal fa-angle-right"></i>Portfolio</a></li> 
                                                             </ul>
                         </div>
-                    </div> <!-- widget item 2 -->
+                    </div> widget item 2 -->
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="widget-item-3 mt-30">
