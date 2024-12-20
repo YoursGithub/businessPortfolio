@@ -48,7 +48,7 @@
 <style>
     .single-banner {
             position: relative;
-            width: 110%;
+            width: 102.65%;
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -69,6 +69,7 @@
 @media (max-width: 768px) {
     .background-container {
         left: 0;
+        /* width: 100%; */
         top: -500px;
     }
 }
@@ -370,61 +371,87 @@
             <!DOCTYPE html>
 <html>
 <body>
-    <div style="background-image: url('/assets/front/images/russia.jpeg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            padding: 0;
-            margin: 0;
-            margin-left: -100px;
-            margin-top: -120px;
-            position: relative;
-            color: white;
-            width: 100vw;
-            height: 100vh;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;">
-    
+    <div style="
+    background-image: url('/assets/front/images/russia.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 105vw;
+    height: 100vh;
+    margin: 0;
+    margin-top: -120px;
+    padding: 0;
+    position: relative;
+    color: white;
+    left: 50%;
+    transform: translateX(-50%);
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+">
+    <!-- Overlay for better text readability -->
+    <div style="
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    "></div>
+
     <!-- Content container -->
-    <div style="width: 100%;
-                padding: 20px;
-                position: relative;
-                z-index: 2;
-                text-align: center;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;">
-        
-        <!-- Content column -->
-        <div>
+    <div style="
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 40px 20px;
+        position: relative;
+        z-index: 2;
+        /* display: flex; */
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+        box-sizing: border-box;
+    ">
+        <!-- Left column -->
+        <div style="
+            flex: 1 1 300px;
+            text-align: center;
+            margin: 20px 0;
+        ">
             <div style="margin-bottom: clamp(20px, 3vh, 40px);">
-                <span style="display: inline-block;
-                           font-size: clamp(14px, 1.5vw, 16px);
-                           font-weight: 700;
-                           text-transform: uppercase;
-                           padding: 8px 20px;
-                           background: #007bff;
-                           color: white;
-                           border-radius: 5px;">ABOUT US</span>
+                <span style="
+                    display: inline-block;
+                    font-size: clamp(14px, 1.5vw, 16px);
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    padding: 8px 20px;
+                    background: #007bff;
+                    color: white;
+                    border-radius: 5px;
+                ">ABOUT US</span>
             </div>
         </div>
-            
-            <!-- Right column -->
-            <div style="flex: 1 1 400px;">
-                <p style="font-size: clamp(16px, 1.8vw, 18px);
-                          line-height: 1.6;
-                          margin: 0;
-                          background-color: #555;
-                          font-weight: 700;">
-                    
-                    We are a decentralized, volunteer-driven platform fostering seamless collaboration between businesses in Russia and India. Our mission is to enable private and public enterprises across all sectors to connect, explore opportunities, and expand into vibrant markets, unlocking their full potential.
-                </p>
-            </div>
+
+        <!-- Right column -->
+        <div style="
+            flex: 1 1 400px;
+            padding: 20px;
+        ">
+            <p style="
+                font-size: clamp(16px, 1.8vw, 18px);
+                line-height: 1.6;
+                margin: 0;
+                background-color: rgba(85, 85, 85, 0.8);
+                padding: 20px;
+                border-radius: 5px;
+                font-weight: 700;
+            ">
+                We are a decentralized, volunteer-driven platform fostering seamless collaboration between businesses in Russia and India. Our mission is to enable private and public enterprises across all sectors to connect, explore opportunities, and expand into vibrant markets, unlocking their full potential.
+            </p>
         </div>
     </div>
+</div>
 
             <!-- Service Start -->
             <div class="service-items pt-50">
