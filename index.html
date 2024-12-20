@@ -48,7 +48,7 @@
 <style>
     .single-banner {
             position: relative;
-            width: 100%;
+            width: 110%;
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -111,7 +111,7 @@
         .dashboard-link a {
             position: absolute;
             background-color: white;
-            color: blue;
+            color: white;
             padding: 15px 25px;
             border-radius: 5px;
             text-decoration: none;
@@ -330,17 +330,25 @@
                             Company Name
                         </span> -->
                         <div style="display: flex;">
+                            <div>
                             <h1 class="title" style="color: white; margin-top: 50px;">
                               Russia-India Bridge - MOCT
                             </h1>
-                            
+                            <p style="color: white; font-size: 20px;"><i>Bridging Businesses, Empower Partnerships</i></p>
+                            </div>
                             <div class="dashboard-link" style="display: flex; margin-top: 60px;">
                               <a href="https://business-dashboard-topaz.vercel.app/" 
                                  target="_blank" 
                                  class="dash" 
-                                 style="display: flex; white-space: nowrap; ">
+                                 style="display: flex; white-space: nowrap;  background: #b92b27; /* fallback for old browsers */
+                                 background: -webkit-linear-gradient(to right, #b92b27, #1565c0); /* Chrome 10-25, Safari 5.1-6 */
+                                 background: linear-gradient(to right, #b92b27, #1565c0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                               ">
                                 Go to Dashboard
+                                <i style="margin-top: 8px; margin-left: 15px;" class="fa-solid fa-arrow-right"></i>
+
                               </a>
+                              
                             </div>
                           </div>
                     </div>
@@ -362,49 +370,56 @@
             <!DOCTYPE html>
 <html>
 <body>
-    <div style="background-image: url('/assets/front/images/russia.jpeg'); 
-                background-size: cover; 
-                background-position: center; 
-                background-repeat: no-repeat; 
-                padding: 5vh 0; 
-                position: relative; 
-                color: white; 
-                width: 100%; 
-                min-height: 90vh;">        
+    <div style="background-image: url('/assets/front/images/russia.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 0;
+            margin: 0;
+            margin-left: -100px;
+            margin-top: -120px;
+            position: relative;
+            color: white;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;">
+    
+    <!-- Content container -->
+    <div style="width: 100%;
+                padding: 20px;
+                position: relative;
+                z-index: 2;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;">
         
-        <!-- Content container -->
-        <div style="max-width: 120%;
-                    margin: 0 auto;
-                    padding: 0 20px;
-                    position: relative;
-                    z-index: 2;
-                    margin-top: 40px;
-                    text-align: center;
-                    flex-wrap: wrap;
-                    align-items: center;
-                    justify-content: space-between;
-                    gap: 2rem;">
-            
-            <!-- Left column -->
-            <div style="flex: 1 1 300px;">
-                <div style="margin-bottom: clamp(20px, 3vh, 40px);">
-                    <span style="display: inline-block;
-                               font-size: clamp(14px, 1.5vw, 16px);
-                               font-weight: 700;
-                               text-transform: uppercase;
-                               padding: 8px 20px;
-                               background: #007bff;
-                               color: white;
-                               border-radius: 5px;">ABOUT US</span>
-                </div>
+        <!-- Content column -->
+        <div>
+            <div style="margin-bottom: clamp(20px, 3vh, 40px);">
+                <span style="display: inline-block;
+                           font-size: clamp(14px, 1.5vw, 16px);
+                           font-weight: 700;
+                           text-transform: uppercase;
+                           padding: 8px 20px;
+                           background: #007bff;
+                           color: white;
+                           border-radius: 5px;">ABOUT US</span>
             </div>
+        </div>
             
             <!-- Right column -->
             <div style="flex: 1 1 400px;">
                 <p style="font-size: clamp(16px, 1.8vw, 18px);
                           line-height: 1.6;
-                          margin: 0;">
-                    Bridging Businesses, Empowering Partnerships
+                          margin: 0;
+                          background-color: #555;
+                          font-weight: 700;">
+                    
                     We are a decentralized, volunteer-driven platform fostering seamless collaboration between businesses in Russia and India. Our mission is to enable private and public enterprises across all sectors to connect, explore opportunities, and expand into vibrant markets, unlocking their full potential.
                 </p>
             </div>
@@ -875,6 +890,7 @@
             <div class="section-title text-center mb-60">
                 <!-- <span class="title-tag">TESTIMONIAL</span> -->
                 <h2 class="title">VOICES OF COLLABORATION</h2>
+                <p>Breaking into the Indian market was daunting, but this platform, along with its managing team, provided the clarity and connections we needed. It wasn’t just about business—it was about understanding the ecosystem and building meaningful partnerships that drove our success.</p>
             </div>
 
             <div class="testimonials-slider row">
@@ -1109,7 +1125,7 @@
                     <div class="widget-item-1 mt-30">
                         <h4 class="title" style="color: white; margin-top: -17px;">Disclaimer</h4>
                         <!-- <img src="assets/front/img/footer_logo16159014611986770640.png" alt=""> -->
-                        <p">This decentralized platform is provided for public use to facilitate business connections. The developers and managing team disclaim all liability for any fiduciary dealings, agreements, disputes, or losses arising from user interactions. Users are solely responsible for verifying parties and conducting due diligence before entering any financial or contractual arrangements.</p>
+                        <p style="color: wheat;">This decentralized platform is provided for public use to facilitate business connections. The developers and managing team disclaim all liability for any fiduciary dealings, agreements, disputes, or losses arising from user interactions. Users are solely responsible for verifying parties and conducting due diligence before entering any financial or contractual arrangements.</p>
                     </div> <!-- widget item 1 -->
                 </div>
                 
